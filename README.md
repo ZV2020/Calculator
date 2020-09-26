@@ -14,9 +14,9 @@
 
 ## [Калькулятор](https://codepen.io/zv2020/pen/yLOwRmv)
 
-## [HTML](/index.html)
+## [HTML](/php/bjs/07_Number_and_string/index.html)
 
-## [Script](/script.js)
+## [Script](/php/bjs/07_Number_and_string/script.js)
 
 
 
