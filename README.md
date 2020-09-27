@@ -18,6 +18,7 @@
 
 ## [Script](/script.js)
 
+## [CSS](/style.css)
 
 
 LICENSE: [MIT](/LICENSE.md)
