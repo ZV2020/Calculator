@@ -1,6 +1,7 @@
 let lastOperand = 0
 let operation = null
 
+
 const inputWindow = document.getElementById('inputWindow');
 const inputWindow2 = document.getElementById('inputWindow2');
 
@@ -91,18 +92,16 @@ document.getElementById('btn_division').addEventListener('click', function () {
 
 document.getElementById('btn_root').addEventListener('click', function () {
     lastOperand = parseFloat(inputWindow.value)
-    operation = null
     const result =  Math.sqrt(inputWindow.value)
     inputWindow.value = result
     addToHistoty('√=' + result) 
 })
 
 document.getElementById('btn_notion').addEventListener('click', function () {
-    lastOperand = parseFloat(inputWindow.value)
-    operation = null
-    const result = lastOperand * (-1)
-    inputWindow.value = result
-    inputWindow2.value = result
+    const currentValue = parseFloat(inputWindow.value);
+    let newValue = -1 * currentValue; 
+    inputWindow.value = newValue
+    replaceHistory(currentValue, newValue); 
 })
 
 document.getElementById('btn_calc').addEventListener('click', function () {
@@ -145,6 +144,7 @@ document.getElementById('btn_clr').addEventListener('click', function () {
     lastOperand = 0
     operation = null
     inputWindow.value = ''
+    addToHistoty(' ')
    
 })
 
@@ -153,4 +153,9 @@ function addToHistoty(data){
     while (inputWindow2.value.length > 30) {
         inputWindow2.value = inputWindow2.value.substring(1)
     }
+}
+
+function replaceHistory(currentValue, newValue) {
+    inputWindow2.value = inputWindow2.value.substring(0, inputWindow2.value.length - currentValue.toString().length);
+    addToHistoty(newValue);
 }
